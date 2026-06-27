@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import Button from '../../ui/Button';
+import DeleteItem from '../cart/DeleteItem';
 import { formatCurrency } from '../../utils/helpers';
 import { addItem } from '../cart/cartSlice';
 
@@ -39,6 +40,9 @@ function MenuItem({ pizza }) {
               Sold out
             </p>
           )}
+
+          <DeleteItem pizzaId={id} />
+
           {!soldOut && (
             <Button type="small" onClick={handleAddToCart}>
               Add to cart
